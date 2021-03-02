@@ -9,8 +9,8 @@
        <input  class="button" type="submit" value="Order" >
      </form> -->
      <!-- </body>  -->
-     {{listProducts[index].productName}}
-    {{listProducts[index].availableQuantity}}
+    Product Name: {{listProducts[index].productName}}<br>
+    Available Quantity:{{listProducts[index].availableQuantity}}
     <form  #f="ngForm"  (ngSubmit)="onSubmit(f)" ngNativeValidate>
         <label for="quan"><b>Quantity Needed:</b></label>
         <input type="number" id="quan" name="neededQuantity" ngModel required><br>

@@ -30,6 +30,7 @@
             <th >productName</th>
             <th >productId</th>
             <th >availableQuantity</th>
+            <th>Order</th>
             
           </tr>
       </thead>
@@ -38,11 +39,9 @@
           <ng-template [ngIf]="(item.productName!=null && item.productName!='' && item.availableQuantity!=0)">
               <td >{{item.productName}}</td>
               <td >{{item.productId}}</td>
-              <td >{{item.availableQuantity}}
+              <td >{{item.availableQuantity}}</td>
+              <td><a  id="{{item.productId}}" [routerLink]="['/order-items', i]" routerLinkActive="active">Order</a>
                   
-                  <nav>
-                    <a  id="{{item.productId}}" [routerLink]="['/order-items', i]" routerLinkActive="active">Order</a>
-                  </nav>
               </td>
           </ng-template>
         </tr>
