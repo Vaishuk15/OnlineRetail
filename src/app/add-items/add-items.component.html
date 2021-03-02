@@ -1,0 +1,40 @@
+
+
+  <head>
+    <style> 
+    input[type=text] {
+      width: 30%;
+      padding: 08px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+    .button {
+  background-color: #0000FF; /* blue */
+  border: none;
+  color: white;
+  padding: 08px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+    </style>
+    </head>
+    <body>
+    
+   <br>
+   <br>
+    
+    <form  #f="ngForm"  (ngSubmit)="onSubmit(f)" ngNativeValidate>
+      <label for="pname"><b>productName:</b></label>
+      <input type="text" id="pname" name="productName" ngModel required><br>
+      <label for="pquan"><b>availableQuantity:</b></label>
+      <input type="number" id="pquan" name="availableQuantity" ngModel required><br>
+      <input  class="button" type="submit" value="Add" >
+    </form>
+    </body>
+    
+

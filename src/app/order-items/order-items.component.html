@@ -1,0 +1,19 @@
+<!-- <body>
+    
+    <br>
+    <br>
+     
+     <form  #f="ngForm"  (ngSubmit)="onSubmit(f)" novalidate>
+       <label for="pquan"><b>availableQuantity:</b></label>
+       <input type="number" id="pquan" name="availableQuantity" ngModel><br>
+       <input  class="button" type="submit" value="Order" >
+     </form> -->
+     <!-- </body>  -->
+     {{listProducts[index].productName}}
+    {{listProducts[index].availableQuantity}}
+    <form  #f="ngForm"  (ngSubmit)="onSubmit(f)" ngNativeValidate>
+        <label for="pquan"><b>Quantity Needed:</b></label>
+        <input type="number" id="pquan" name="neededQuantity" ngModel required><br>
+        <input  class="button" type="submit" value="Order" >
+      </form> 
+     
