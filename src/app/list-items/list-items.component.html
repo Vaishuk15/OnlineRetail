@@ -34,14 +34,14 @@
           </tr>
       </thead>
           
-      <tr  *ngFor="let each of productList;let i=index">
-          <ng-template [ngIf]="(each.productName!=null && each.productName!='' && each.availableQuantity!=0)">
-              <td >{{each.productName}}</td>
-              <td >{{each.productId}}</td>
-              <td >{{each.availableQuantity}}
+      <tr  *ngFor="let item of productList;let i=index">
+          <ng-template [ngIf]="(item.productName!=null && item.productName!='' && item.availableQuantity!=0)">
+              <td >{{item.productName}}</td>
+              <td >{{item.productId}}</td>
+              <td >{{item.availableQuantity}}
                   
                   <nav>
-                    <a  id="{{each.productId}}" [routerLink]="['/order-items', i]" routerLinkActive="active">Order</a>
+                    <a  id="{{item.productId}}" [routerLink]="['/order-items', i]" routerLinkActive="active">Order</a>
                   </nav>
               </td>
           </ng-template>
