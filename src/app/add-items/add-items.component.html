@@ -5,11 +5,11 @@
    <br>
    <br>
     
-    <form  #f="ngForm"  (ngSubmit)="onSubmit(f)" ngNativeValidate>
-      <label for="name"><b>productName:</b></label>
+    <form  #addForm="ngForm"  (ngSubmit)="onSubmit(addForm)" ngNativeValidate>
+      <label for="name"><b>Product Name:</b></label>
       <input type="text" id="name" name="productName" ngModel required><br>
-      <label for="quan"><b>availableQuantity:</b></label>
-      <input type="number" id="quan" name="availableQuantity" ngModel required><br>
+      <label for="quantity"><b>Available Quantity:</b></label>
+      <input type="number" id="quantity" name="availableQuantity" ngModel required min="1"><br>
       <input  class="button" type="submit" value="Add" >
     </form>
     </body>

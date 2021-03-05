@@ -1,35 +1,10 @@
 
-  
-
-  <head>
-    <style>
-       table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  
-  
-    </style>
-    </head>
     <body>
-    
-   <br>
-   <br>
-   
-    <table>
+     <table>
       <thead>
           <tr>
-            <th >productName</th>
-            <th >productId</th>
-            <th >availableQuantity</th>
+            <th >Product Name</th>
+            <th >Available Quantity</th>
             <th>Order</th>
             
           </tr>
@@ -38,9 +13,8 @@
       <tr  *ngFor="let item of productList;let i=index">
           <ng-template [ngIf]="(item.productName!=null && item.productName!='' && item.availableQuantity!=0)">
               <td >{{item.productName}}</td>
-              <td >{{item.productId}}</td>
               <td >{{item.availableQuantity}}</td>
-              <td><a  id="{{item.productId}}" [routerLink]="['/order-items', i]" routerLinkActive="active">Order</a>
+              <td><a  id="{{item.productId}}" [routerLink]="['/order-items', item.productId]" routerLinkActive="active">Order</a>
                   
               </td>
           </ng-template>

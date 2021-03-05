@@ -8,6 +8,7 @@ import { AppServiceService } from './app-service.service';
 import { ListItemsComponent } from './list-items/list-items.component';
 import { AddItemsComponent } from './add-items/add-items.component';
 import { OrderItemsComponent } from './order-items/order-items.component';
+import { OrderServiceService } from './order-service.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { OrderItemsComponent } from './order-items/order-items.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AppServiceService],
+  providers: [AppServiceService,OrderServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

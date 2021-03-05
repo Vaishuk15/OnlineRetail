@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppServiceService } from '../app-service.service';
 import {FormGroup, NgForm} from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-items',
@@ -21,13 +20,13 @@ onSubmit(f:NgForm) {
   this.proService.postData(f.value)
     .subscribe((data: any) => {
       console.log(data)
-      alert("Product Added");
+      Swal.fire('Product Added','Success');
       f.reset()
    
      
     },
     (error: { message: any; })=>{
-      alert(error.message)
+      Swal.fire('error','Failure')
       
     }
     )      

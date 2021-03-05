@@ -3,11 +3,10 @@ import { Injectable } from '@angular/core';
 import { input } from './data';
 import {BehaviorSubject} from 'rxjs';
 import { Observable, throwError} from 'rxjs';
-import { AddItemsComponent } from './add-items/add-items.component';
 import { map, catchError } from 'rxjs/operators';
+import{environment} from 'src/environments/environment.prod';
 
-import { NgForm } from '@angular/forms';
-
+const getUrl = environment.baseUrl+"/Product";
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +21,7 @@ export class AppServiceService {
      this.content.next(text)
   }
   getData(): Observable<input[]> {
-    return this.http.get<input[]>('https://uiexercise.onemindindia.com/api/Product').pipe(map( data => {
+    return this.http.get<input[]>(getUrl).pipe(map( data => {
       this.listProducts = data;
       return data;
     }));
@@ -32,13 +31,11 @@ export class AppServiceService {
     return this.listProducts;
   }
 
-  orderProduct(data:any): Observable<any>{
-    return this.http.post('https://uiexercise.onemindindia.com/api/OrderProducts',data)
-  }
+  
 
   postData(data: any):Observable<any> {
     
-    return this.http.post<any>('https://uiexercise.onemindindia.com/api/Product' ,data)
+    return this.http.post<any>(getUrl,data)
  
   }
 
