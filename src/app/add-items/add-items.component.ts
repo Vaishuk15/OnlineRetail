@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppServiceService } from '../app-service.service';
-import {FormGroup, NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,33 +9,45 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add-items.component.css']
 })
 export class AddItemsComponent implements OnInit {
- 
- 
-constructor(private proService:AppServiceService) { }
- ngOnInit(): void {
+  availableQuantity: any;
+  productName:any;
+
+  constructor(private proService: AppServiceService) { }
+  ngOnInit(): void {
   }
 
-onSubmit(f:NgForm) {
-  console.log(f.value)
-  this.proService.postData(f.value)
-    .subscribe((data: any) => {
-      console.log(data)
-      Swal.fire('Product Added','Success');
-      f.reset()
-   
-     
-    },
-    (error: { message: any; })=>{
-      Swal.fire('error','Failure')
-      
+  onSubmit() {
+    const addList = {
+      productName: this.productName,
+      availableQuantity: this.availableQuantity
     }
-    )      
+
+    this.proService.postData(addList)
+      .subscribe((data: any) => {
+        Swal.fire('Product Added', 'Success');
+
+
+      },
+        (error: { message: any; }) => {
+          Swal.fire('error', 'Failed');
+
+        })
+
+
+
+
+  }
+  sliceInput() {
+    if (this.availableQuantity > 1000000) {
+      Swal.fire("Please give correct quantity!", 'error');
+
+
+    }
+  }
 }
 
-}
-      
-      
-  
-  
+
+
+
 
 

@@ -1,4 +1,4 @@
-.button {
+/* .button {
     background-color: #0041C2; 
     border: none;
     color: white;
@@ -9,4 +9,21 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    }
+    } */
+    @import "//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css";
+    .button {
+      background-color: #0041C2;
+      border-radius: 5px;
+      border:none;
+      width: 100px;
+      height: 30px;
+      }
+      .button:focus{
+        outline: none;
+        
+      }
+    .container{
+        margin:auto 50px;
+        display: flex;
+        justify-content: center;
+    } 

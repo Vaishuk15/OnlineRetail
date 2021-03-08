@@ -1,19 +1,11 @@
-<!-- <body>
-    
-    <br>
-    <br>
-     
-     <form  #f="ngForm"  (ngSubmit)="onSubmit(f)" novalidate>
-       <label for="pquan"><b>availableQuantity:</b></label>
-       <input type="number" id="pquan" name="availableQuantity" ngModel><br>
-       <input  class="button" type="submit" value="Order" >
-     </form> -->
-     <!-- </body>  -->
-    Product Name: {{item[0].productName}}<br>
-    Available Quantity:{{item[0].availableQuantity}}
-    <form  #orderForm="ngForm"  (ngSubmit)="onSubmit(orderForm)" ngNativeValidate>
-        <label for="quantity"><b>Quantity Needed:</b></label>
-        <input type="number" id="quantity" name="neededQuantity" ngModel required min="1"><br>
-        <input  class="button" type="submit" value="Order" >
-      </form> 
-     
+
+Product Name: {{product.productName}}<br>
+Available Quantity:{{product.availableQuantity}}
+
+  <div style="padding: 15px;background-color: gray;border-radius: 5px;">
+  <form #orderForm="ngForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+    <label for="quantity" style="color: honeydew;"><b>Quantity Needed:</b></label>
+    <input type="number" id="quantity" name="neededQuantity"   [(ngModel)]="availableQuantity"   required min="1" (input)="sliceInput()" style="font-size: medium;height: 36px;width: 250px;"><br>
+    <input class="button" type="submit" value="Order">
+    </form>
+  </div>

@@ -1,29 +1,28 @@
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Available Quantity</th>
+                <th>Order</th>
 
-    <body>
-     <table>
-      <thead>
-          <tr>
-            <th >Product Name</th>
-            <th >Available Quantity</th>
-            <th>Order</th>
-            
-          </tr>
-      </thead>
-          
-      <tr  *ngFor="let item of productList;let i=index">
-          <ng-template [ngIf]="(item.productName!=null && item.productName!='' && item.availableQuantity!=0)">
-              <td >{{item.productName}}</td>
-              <td >{{item.availableQuantity}}</td>
-              <td><a  id="{{item.productId}}" [routerLink]="['/order-items', item.productId]" routerLinkActive="active">Order</a>
-                  
-              </td>
-          </ng-template>
+            </tr>
+        </thead>
+
+        <tr *ngFor="let item of productList;">
+            <ng-template [ngIf]="checkCondition(item)">
+                <td>{{item.productName}}</td>
+                <td>{{item.availableQuantity}}</td>
+                <td><a id="{{item.productId}}" [routerLink]="['/order-items', item.productId]"
+                        routerLinkActive="active">Order</a>
+
+                </td>
+            </ng-template>
         </tr>
-     
-      
+
+
     </table>
-    
-    </body>
-    
-    <router-outlet></router-outlet>
-    
+
+</body>
+
+<router-outlet></router-outlet>
