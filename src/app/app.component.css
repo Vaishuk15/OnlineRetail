@@ -1,18 +1,9 @@
 @import "//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css";
 
-/* .tab:not(:target) {
-  display: none;
-} */
 
-.tab:last-child {
-  display: block;
+.active {
+  font-weight: 700;
+  font-size: medium;
 }
 
-.tab:target ~ .tab:last-child {
-  display: none;
-}
 
-.tabs {
-  width: 30em;
-  margin: 6.5em auto;
-}
