@@ -59,9 +59,7 @@ export class OrderItemsComponent implements OnInit {
     this.orderService.orderProduct(product)
       .subscribe(
         (result: any) => {
-        // console.log("in")
-        //console.log(this.productName)
-        //   console.log(result);
+        
           Swal.fire('Order placed', 'success')
         },
         (error: any) => {
