@@ -4,6 +4,7 @@
             <tr>
                 <th>Product Name</th>
                 <th>Available Quantity</th>
+                <th> Price per Quantity</th>
                  <th>Order</th>
 
             </tr>
@@ -13,6 +14,7 @@
             <ng-template [ngIf]="checkCondition(item)">
                 <td>{{item.productName}}</td>
                 <td>{{item.availableQuantity}}</td>
+                <td>{{item.unitPrice}}</td>
                 <td><a id="{{item.productId}}" [routerLink]="['/order-items', item.productId]"
                         routerLinkActive="active">Order</a>
 

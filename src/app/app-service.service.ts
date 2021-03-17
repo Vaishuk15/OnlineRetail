@@ -6,7 +6,7 @@ import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
 
-const getUrl = environment.baseUrl + "/Product";
+const getUrl = environment.baseUrl + "Product";
 @Injectable({
   providedIn: 'root'
 })
@@ -31,7 +31,7 @@ export class AppServiceService {
     return this.listProducts;
   }
   postData(data: any): Observable<any> {
-
+    console.log(data)
     return this.http.post<any>(getUrl, data,{ responseType: 'text' as 'json' })
 
   }

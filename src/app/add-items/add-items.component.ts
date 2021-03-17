@@ -9,8 +9,8 @@ import Swal from 'sweetalert2';
 })
 export class AddItemsComponent implements OnInit {
   availableQuantity: any;
-  productName:any;
-  //unitPrice:any;
+  productName: any;
+  unitPrice:any;
 
   constructor(private proService: AppServiceService) { }
   ngOnInit(): void {
@@ -19,12 +19,14 @@ export class AddItemsComponent implements OnInit {
   onSubmit() {
     const addList = {
       productName: this.productName,
-      availableQuantity: this.availableQuantity
-      //unitPrice: this.unitPrice
-    }
+      availableQuantity: this.availableQuantity,
+      unitPrice: this.unitPrice
+    };
+   // console.log(addList)
 
     this.proService.postData(addList)
       .subscribe((data: any) => {
+        //console.log(data)
         Swal.fire('Product Added!', 'Success');
 
 
@@ -32,7 +34,7 @@ export class AddItemsComponent implements OnInit {
         (error: { message: any; }) => {
           Swal.fire('error', 'Failed');
 
-        })
+        });
 
 
 
@@ -40,7 +42,7 @@ export class AddItemsComponent implements OnInit {
   }
   sliceInput() {
     if (this.availableQuantity > 1000000) {
-      Swal.fire("Please give correct quantity!", 'error');
+      Swal.fire('Please give correct quantity!', 'error');
 
 
     }

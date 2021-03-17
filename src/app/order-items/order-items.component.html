@@ -1,6 +1,7 @@
 
 <h4> Name: {{product.productName}}<br>
-Available Quantity:{{product.availableQuantity}}</h4>
+Available Quantity:{{product.availableQuantity}}<br>
+Unit Price:{{product.unitPrice}}</h4>
 
 <div class="containerdiv">
   <form #orderForm="ngForm" (ngSubmit)="onSubmit()" ngNativeValidate>

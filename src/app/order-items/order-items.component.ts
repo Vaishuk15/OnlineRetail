@@ -16,6 +16,7 @@ export class OrderItemsComponent implements OnInit {
   item: any;
   product: any;
   availableQuantity: any;
+  unitPrice: any;
   //productName:any;
 
 
@@ -53,6 +54,7 @@ export class OrderItemsComponent implements OnInit {
     var product = {
       productId: this.productId,
       quantity: this.availableQuantity,
+      unitPrice:this.unitPrice
     }
     this.orderService.orderProduct(product)
       .subscribe(
