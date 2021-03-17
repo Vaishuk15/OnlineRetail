@@ -32,7 +32,7 @@ export class AppServiceService {
   }
   postData(data: any): Observable<any> {
 
-    return this.http.post<any>(getUrl, data)
+    return this.http.post<any>(getUrl, data,{ responseType: 'text' as 'json' })
 
   }
 

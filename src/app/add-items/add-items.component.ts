@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AppServiceService } from '../app-service.service';
-import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,6 +10,7 @@ import Swal from 'sweetalert2';
 export class AddItemsComponent implements OnInit {
   availableQuantity: any;
   productName:any;
+  //unitPrice:any;
 
   constructor(private proService: AppServiceService) { }
   ngOnInit(): void {
@@ -20,11 +20,12 @@ export class AddItemsComponent implements OnInit {
     const addList = {
       productName: this.productName,
       availableQuantity: this.availableQuantity
+      //unitPrice: this.unitPrice
     }
 
     this.proService.postData(addList)
       .subscribe((data: any) => {
-        Swal.fire('Product Added', 'Success');
+        Swal.fire('Product Added!', 'Success');
 
 
       },
