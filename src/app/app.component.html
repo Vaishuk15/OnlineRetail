@@ -1,16 +1,19 @@
-<div class="container">
-  <div id="tab3" class="tab">
-    <ul class="nav nav-tabs">
-      <li><a routerLink="/list-items" routerLinkActive="active">List Products</a></li>
-      <li> <a routerLink="/add-items" routerLinkActive="active">Add Products</a><br>
-      </li>
+<div >
 
-    </ul>
-
-  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" ></a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/list-items" routerLinkActive="active"><h4>List Products</h4> </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/add-items"   routerLinkActive="active"><h4>Add Products</h4></a>
+        </li>
+      </ul>
+  </nav>
   <router-outlet></router-outlet>
+</div>
 
 
 
-
- 
+  

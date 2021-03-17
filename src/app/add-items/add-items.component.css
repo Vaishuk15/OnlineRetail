@@ -1,14 +1,21 @@
 @import "//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css";
 .button {
-  background-color: #0041C2;
+  background-color: honeydew;
  } 
- .container{
-  margin:auto 50px;
+ .containerdiv{
   display: flex;
   justify-content: center;
-  padding: 15px;
+  padding: 10px;
   background-color: gray;
   border-radius: 5px;
 } 
+.productName{
+  font-size: medium;height: 36px;width: 250px;
+}
+.quantity{
+  font-size: medium;height: 36px;width: 250px;
 
-/* style="padding: 15px;background-color: gray;border-radius: 5px;" */
+}
+.unitPrice{
+  font-size: medium;height: 36px;width: 250px;
+} 

@@ -16,6 +16,8 @@ export class OrderItemsComponent implements OnInit {
   item: any;
   product: any;
   availableQuantity: any;
+  unitPrice: any;
+  //productName:any;
 
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -52,14 +54,18 @@ export class OrderItemsComponent implements OnInit {
     var product = {
       productId: this.productId,
       quantity: this.availableQuantity,
+      unitPrice:this.unitPrice
     }
-
     this.orderService.orderProduct(product)
       .subscribe(
         (result: any) => {
+        // console.log("in")
+        //console.log(this.productName)
+        //   console.log(result);
           Swal.fire('Order placed', 'success')
         },
         (error: any) => {
+         // console.log(error);
           Swal.fire('Order not placed', 'Failed')
         }
       )

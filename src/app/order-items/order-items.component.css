@@ -1,29 +1,24 @@
-/* .button {
-    background-color: #0041C2; 
-    border: none;
-    color: white;
-    padding: 08px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    } */
+
     @import "//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css";
     .button {
-      background-color: #0041C2;
-      border-radius: 5px;
-      border:none;
-      width: 100px;
-      height: 30px;
+      background-color:honeydew;
+      
       }
       .button:focus{
         outline: none;
         
       }
-    .container{
-        margin:auto 50px;
-        display: flex;
-        justify-content: center;
-    } 
+    .containerdiv{
+     
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: gray;
+    /* color: white; */
+    border-radius: 5px;
+    /* width: 100%; */
+  
+  }
+    .quantity{
+      font-size: medium;height: 36px;width: 250px;
+    }
