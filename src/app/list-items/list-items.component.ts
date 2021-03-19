@@ -8,10 +8,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./list-items.component.css'],
 })
 export class ListItemsComponent implements OnInit {
-  public productList: any[] = [];
-  public productName: any;
-  public productId: any;
-  public availableQuantity: any;
+   productList: any[] = [];
+   productName: any;
+  productId: any;
+  availableQuantity: any;
   data: any;
 
   get filteredproductList(): any[] {
@@ -22,7 +22,6 @@ export class ListItemsComponent implements OnInit {
 
   ngOnInit(): void {
     this.proService.getData().subscribe((data) => {
-      console.log(data);
       this.productList = data;
     });
   }
@@ -50,4 +49,6 @@ export class ListItemsComponent implements OnInit {
       }
     );
   }
+
+  
 }

@@ -1,12 +1,8 @@
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpHeaders,
-} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { input } from './data';
 import { BehaviorSubject } from 'rxjs';
-import { Observable, throwError } from 'rxjs';
+import { Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
 
@@ -15,15 +11,13 @@ const getUrl = environment.baseUrl + 'Product';
   providedIn: 'root',
 })
 export class AppServiceService {
+ 
   listProducts: input[] = [];
 
   private content = new BehaviorSubject<string>('default');
   public share = this.content.asObservable();
   constructor(private http: HttpClient) {}
 
-  updateData(text: string) {
-    this.content.next(text);
-  }
   getData(): Observable<input[]> {
     return this.http.get<input[]>(getUrl).pipe(
       map((data) => {
@@ -43,15 +37,17 @@ export class AppServiceService {
   }
 
   deleteData(data: any): Observable<any> {
-    console.log('from service' + data);
+   
     return this.http.delete<any>(getUrl + '/' + data, {
       responseType: 'text' as 'json',
     });
+  }
 
-    // updateProduct(id, data): Observable<any> {
-    //   var endpoint = url + "/" + id
-    //   console.log(endpoint)
-    //   return this.http.put(endpoint, data)
-    // }
+
+  updateProduct(id:string,data: any): Observable<any> {
+    
+    return this.http.put<any>(getUrl+"/"+id, data,{
+      responseType: 'text' as 'json',
+    });
   }
 }
