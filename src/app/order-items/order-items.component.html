@@ -2,12 +2,14 @@
 <h4> Name: {{product.productName}}<br>
 Available Quantity:{{product.availableQuantity}}<br>
 Price per Quantity:{{product.unitPrice}}</h4>
+ <!-- Total Price:{{product.quantity * product.unitprice}}  -->
 
 <div class="containerdiv">
   <form #orderForm="ngForm" (ngSubmit)="onSubmit()" ngNativeValidate>
     <label for="quantity" ><b>Quantity Needed:</b></label>
     <input class="quantity"type="number" id="quantity" name="neededQuantity"   [(ngModel)]="availableQuantity"   required min="1" (input)="sliceInput()" ><br>
     <input class="button" type="submit" value="Order">
+    
     </form>
   </div>
 

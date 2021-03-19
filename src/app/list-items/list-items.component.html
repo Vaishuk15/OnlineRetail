@@ -1,17 +1,18 @@
 
-    <table class="table containerdiv">
+    <div class="table containerdiv">
+      <table class="table table-striped">
         <thead>
             <tr>
-                <th>Product Name</th>
-                <th>Available Quantity</th>
-                <th>Price per Quantity</th>
-                <th>Order</th>
-                <th>Delete</th>
-                <th>Update</th>
+                <th><h4>Product Name</h4></th>
+                <th><h4>Quantity</h4></th>
+                <th><h4>Price per Quantity</h4></th>
+                <th><h4>Order</h4></th>
+                <th><h4>Delete</h4></th>
+                <th><h4>Update</h4></th>
             </tr>
         </thead>
 
-        <tr *ngFor="let item of filteredproductList">
+        <ng-container  *ngFor="let item of filteredproductList"><tr>
            
                 <td>{{ item.productName }}</td>
                 <td>{{ item.availableQuantity }}</td>
@@ -19,27 +20,65 @@
                 <td>
                     <!-- <a id="{{item.productId}}" [routerLink]="['/order-items', item.productId]"
                         routerLinkActive="active">Order</a> -->
-                    <button [routerLink]="['/order-items', item.productId]" routerLinkActive="active">
+                     <button [routerLink]="['/order-items', item.productId]" routerLinkActive="active">
                         Order
                     </button>
-                </td>
+                </td> 
 
                 <td><button (click)="deleteItem(item.productId)">Delete</button></td>
                 <td>
-                    <button  [routerLink]="['/update-product', item.productId]">
+                    <button  [routerLink]="['/update-items', item.productId]" routerLinkActive="active">
                         Update
                     </button>
-                </td>
+                </td> 
                 <!-- <td> <button (click)="delete()">Delete</button> </td>  -->
 
                 <!-- <td><button class="GFG" 
     onclick="window.location.href = 'https:'/order-items;"> 
        Delete
     </button> </td>  -->
-                <!-- <list-items (deleteRequest)="deleteItem($event)" [data]="currentItem"></list-items> -->
+               
            
-        </tr>
-    </table>
+         </tr>
+          </ng-container>
+    </table> 
+  </div>
 
 
+
+<!-- 
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+   
+    <ng-container matColumnDef="productName">
+      <th mat-header-cell *matHeaderCellDef> Product Name </th>
+      <td mat-cell *matCellDef="let element">{{ item.productName }} </td>
+    </ng-container>
+  
+   
+    <ng-container matColumnDef="availableQuantity">
+      <th mat-header-cell *matHeaderCellDef>Available Quantity </th>
+      <td mat-cell *matCellDef="let element"> {{ item.availableQuantity }}</td>
+    </ng-container>
+  
+   
+    <ng-container matColumnDef="unitPrice">
+      <th mat-header-cell *matHeaderCellDef> Price per Quantity </th>
+      <td mat-cell *matCellDef="let element"> {{ item.unitPrice }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="order">
+        <th mat-header-cell *matHeaderCellDef> Price per Quantity </th> 
+        <td mat-cell *matCellDef="let ">  <button [routerLink]="['/order-items', item.productId]" routerLinkActive="active">
+            Order
+        </button></td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table> -->
+  
 <router-outlet></router-outlet>
+  
+  
+  

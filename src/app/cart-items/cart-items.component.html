@@ -1,0 +1,40 @@
+
+  
+<div class="table containerdiv">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+       
+        <th ><h4>Product Name</h4></th>
+        <th ><h4>Quantity</h4></th>
+        <th ><h4>Ordered Date</h4></th>
+        <th ><h4>Shipping Date</h4></th>
+        <th ><h4>Total Price</h4></th>
+        <th ><h4>Delete</h4></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let order of orderList;">
+        <tr>
+          
+          <td>{{ order.product.productName }}</td>
+          <td>{{ order.quantity }}</td>
+          <td>{{ order.orderedDate | date: format }}</td>
+          <td>{{ order.shippingDate | date: format }}</td>
+          <td>{{ order.quantity * order.product.unitPrice }}</td>
+          <td>
+            <button
+             
+              (click)="deleteOrder(order.orderId)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet> 
+

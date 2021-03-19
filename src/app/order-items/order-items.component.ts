@@ -6,6 +6,7 @@ import { OrderServiceService } from '../order-service.service';
 
 
 
+
 @Component({
   selector: 'app-order-items',
   templateUrl: './order-items.component.html',
@@ -51,23 +52,23 @@ export class OrderItemsComponent implements OnInit {
   onSubmit() {
 
 
-    var product = {
-      productId: this.productId,
-      quantity: this.availableQuantity,
-      unitPrice:this.unitPrice
+      var product = {
+        productId: this.productId,
+        quantity: this.availableQuantity,
+        unitPrice:this.unitPrice
+      }
+      
+      this.orderService.orderProduct(product)
+        .subscribe(
+          (result: any) => {
+          
+            Swal.fire('Order placed', 'success')
+          },
+          (error: any) => {
+            Swal.fire('Order not placed', 'Failed')
+          }
+        );
     }
-    this.orderService.orderProduct(product)
-      .subscribe(
-        (result: any) => {
-        
-          Swal.fire('Order placed', 'success')
-        },
-        (error: any) => {
-         // console.log(error);
-          Swal.fire('Order not placed', 'Failed')
-        }
-      )
-  }
 
 }
 

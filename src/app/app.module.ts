@@ -9,13 +9,17 @@ import { ListItemsComponent } from './list-items/list-items.component';
 import { AddItemsComponent } from './add-items/add-items.component';
 import { OrderItemsComponent } from './order-items/order-items.component';
 import { OrderServiceService } from './order-service.service';
+import { UpdateItemsComponent } from './update-items/update-items.component';
+import { CartItemsComponent } from './cart-items/cart-items.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListItemsComponent,
     AddItemsComponent,
-    OrderItemsComponent
+    OrderItemsComponent,
+    UpdateItemsComponent,
+    CartItemsComponent
   ],
   imports: [
     BrowserModule,
