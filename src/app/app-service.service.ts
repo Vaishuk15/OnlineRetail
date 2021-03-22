@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { input } from './data';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
@@ -12,24 +12,22 @@ const getUrl = environment.baseUrl + 'Product';
 })
 export class AppServiceService {
  
-  listProducts: input[] = [];
+  listProducts= new Subject<input[]>();
 
-  private content = new BehaviorSubject<string>('default');
-  public share = this.content.asObservable();
+
+
+  // private content = new BehaviorSubject<string>('default');
+  // public share = this.content.asObservable();
+  // productList: any;
   constructor(private http: HttpClient) {}
 
-  getData(): Observable<input[]> {
-    return this.http.get<input[]>(getUrl).pipe(
-      map((data) => {
-        this.listProducts = data;
-        return data;
-      })
-    );
+  getData(){
+    this.http.get<input[]>(getUrl).subscribe(listProducts=>this.listProducts.next(listProducts))
   }
 
-  getItems() {
-    return this.listProducts;
-  }
+  // getItems() {
+  //   return this.listProducts;
+  // }
   postData(data: any): Observable<any> {
     return this.http.post<any>(getUrl, data, {
       responseType: 'text' as 'json',

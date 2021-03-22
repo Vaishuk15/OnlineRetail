@@ -22,7 +22,8 @@ export class UpdateItemsComponent implements OnInit {
 
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.params.id;
-    this.appService.getData().subscribe((result: any) => {
+    this.appService.getData();
+    this.appService.listProducts.subscribe((result: any) => {
       result.forEach((product: any) => {
         if (product.productId == this.productId) {
           this.product = product;

@@ -29,7 +29,8 @@ export class OrderItemsComponent implements OnInit {
   ngOnInit(): void {
 
     this.productId = this.activatedRoute.snapshot.params.id;
-    this.appService.getData().subscribe(result => {
+    this.appService.getData();
+    this.appService.listProducts.subscribe(result => {
 
       result.forEach(product => {
         if (product.productId == this.productId) {
