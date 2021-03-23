@@ -1,24 +1,21 @@
-
-    @import "//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css";
-    .button {
-      background-color:honeydew;
-      
-      }
-      .button:focus{
-        outline: none;
-        
-      }
-    .containerdiv{
-     
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    background-color: gray;
-    /* color: white; */
-    border-radius: 5px;
-    /* width: 100%; */
-  
-  }
-    .quantity{
-      font-size: medium;height: 36px;width: 250px;
-    }
+@import "//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css";
+.button {
+  background-color: honeydew;
+}
+.button:focus {
+  outline: none;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: gray;
+  /* color: white; */
+  border-radius: 5px;
+  /* width: 100%; */
+}
+.quantity {
+  font-size: medium;
+  height: 36px;
+  width: 250px;
+}

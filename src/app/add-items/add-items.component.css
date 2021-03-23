@@ -1,21 +1,26 @@
 @import "//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css";
 .button {
   background-color: honeydew;
- } 
- .containerdiv{
+}
+.container {
   display: flex;
   justify-content: center;
   padding: 10px;
   background-color: gray;
   border-radius: 5px;
-} 
-.productName{
-  font-size: medium;height: 36px;width: 250px;
 }
-.quantity{
-  font-size: medium;height: 36px;width: 250px;
-
+.productName {
+  font-size: medium;
+  height: 36px;
+  width: 250px;
 }
-.unitPrice{
-  font-size: medium;height: 36px;width: 250px;
-} 
+.quantity {
+  font-size: medium;
+  height: 36px;
+  width: 250px;
+}
+.unitPrice {
+  font-size: medium;
+  height: 36px;
+  width: 250px;
+}

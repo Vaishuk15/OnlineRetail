@@ -1,16 +1,42 @@
-<h4> Name: {{product.productName}}<br>
-  Available Quantity:{{product.availableQuantity}}<br>
-  Price per Quantity:{{product.unitPrice}}</h4>
+<h4>
+  Name: {{ product.productName }}<br />
+  Available Quantity:{{ product.availableQuantity }}<br />
+  Price per Quantity:{{ product.unitPrice }}
+</h4>
 
-<div class="containerdiv" >
-    <form #updateForm="ngForm" (ngSubmit)="onSubmit()" ngNativeValidate>
-      <label for="name"><b>Product Name:</b></label>
-      <input class=" productName" type="text" id="name" name="productName"  [(ngModel)]="productName" required pattern="[A-Za-z][A-Za-z_$0-9]*" ><br>
-      <label for="quantity"><b>Available Quantity:</b></label>
-      <input class="quantity" type="number" id="quantity" name="availableQuantity" [(ngModel)]="availableQuantity" required min="1"  ><br>
-      <label for="unitPrice"><b>Price per Quantity:</b></label>
-      <input class="unitPrice" type="number" id="unitPrice" name="unitPrice" [(ngModel)]="unitPrice" required min="1" (input)= "sliceInput()"><br> 
-      <input class="button" type="submit" value="Update">
-    </form>
-  </div>
-    
+<div class="container">
+  <form #updateForm="ngForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+    <label for="name"><b>Product Name:</b></label>
+    <input
+      class="productName"
+      type="text"
+      id="name"
+      name="productName"
+      [(ngModel)]="productName"
+      required
+      pattern="[A-Za-z][A-Za-z_$0-9  ]*"
+    /><br />
+    <label for="quantity"><b>Available Quantity:</b></label>
+    <input
+      class="quantity"
+      type="number"
+      id="quantity"
+      name="availableQuantity"
+      [(ngModel)]="availableQuantity"
+      required
+      min="1"
+    /><br />
+    <label for="unitPrice"><b>Price per Quantity:</b></label>
+    <input
+      class="unitPrice"
+      type="number"
+      id="unitPrice"
+      name="unitPrice"
+      [(ngModel)]="unitPrice"
+      required
+      min="1"
+      (input)="sliceInput()"
+    /><br />
+    <input class="button" type="submit" value="Update" />
+  </form>
+</div>

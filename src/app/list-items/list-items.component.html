@@ -1,84 +1,59 @@
-
-    <div class="table containerdiv">
-      <table class="table table-striped">
-        <thead>
-            <tr>
-                <th><h4>Product Name</h4></th>
-                <th><h4>Available Quantity</h4></th>
-                <th><h4>Price per Quantity</h4></th>
-                <th><h4>Order</h4></th>
-                <th><h4>Delete</h4></th>
-                <th><h4>Update</h4></th>
-            </tr>
-        </thead>
-
-        <ng-container  *ngFor="let item of filteredproductList"><tr>
-           
-                <td>{{ item.productName }}</td>
-                <td>{{ item.availableQuantity }}</td>
-                <td>{{ item.unitPrice }}</td>
-                <td>
-                    <!-- <a id="{{item.productId}}" [routerLink]="['/order-items', item.productId]"
-                        routerLinkActive="active">Order</a> -->
-                     <button [routerLink]="['/order-items', item.productId]" routerLinkActive="active">
-                        Order
-                    </button>
-                </td> 
-
-                <td><button (click)="deleteItem(item.productId)">Delete</button></td>
-                <td>
-                    <button  [routerLink]="['/update-items', item.productId]" routerLinkActive="active">
-                        Update
-                    </button>
-                </td> 
-                <!-- <td> <button (click)="delete()">Delete</button> </td>  -->
-
-                <!-- <td><button class="GFG" 
-    onclick="window.location.href = 'https:'/order-items;"> 
-       Delete
-    </button> </td>  -->
-               
-           
-         </tr>
-          </ng-container>
-    </table> 
-  </div>
-
-
-
-<!-- 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-   
+<div class="containerdiv">
+  <input
+    matInput
+    (input)="searchProduct($any($event.target).value)"
+    placeholder="Search"
+    class="w-100"
+  />
+  <br /><br />
+  <table
+    mat-table
+    [dataSource]="productList"
+    matSort
+    class="mat-elevation-z8 table table-striped"
+  >
     <ng-container matColumnDef="productName">
-      <th mat-header-cell *matHeaderCellDef> Product Name </th>
-      <td mat-cell *matCellDef="let element">{{ item.productName }} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        <h4>Product Name</h4>
+      </th>
+      <td mat-cell *matCellDef="let item">
+        {{ checkCondition(item) ? item.productName : "NA" }}
+      </td>
     </ng-container>
-  
-   
     <ng-container matColumnDef="availableQuantity">
-      <th mat-header-cell *matHeaderCellDef>Available Quantity </th>
-      <td mat-cell *matCellDef="let element"> {{ item.availableQuantity }}</td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        <h4>Available Quantity</h4>
+      </th>
+      <td mat-cell *matCellDef="let item">
+        {{ checkCondition(item) ? item.availableQuantity : "NA" }}
+      </td>
     </ng-container>
-  
-   
     <ng-container matColumnDef="unitPrice">
-      <th mat-header-cell *matHeaderCellDef> Price per Quantity </th>
-      <td mat-cell *matCellDef="let element"> {{ item.unitPrice }} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        <h4>Price per Quantity</h4>
+      </th>
+      <td mat-cell *matCellDef="let item">
+        {{ checkCondition(item) ? item.unitPrice : "NA" }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="feature">
+      <th mat-header-cell *matHeaderCellDef><h4>Features</h4></th>
+      <td mat-cell *matCellDef="let item">
+        <button [routerLink]="['/order-items', item.productId]">Order</button>
+        <button [routerLink]="['/update-items', item.productId]">Update</button>
+        <button (click)="deleteItem(item.productId)">Delete</button>
+      </td>
     </ng-container>
 
-    <ng-container matColumnDef="order">
-        <th mat-header-cell *matHeaderCellDef> Price per Quantity </th> 
-        <td mat-cell *matCellDef="let ">  <button [routerLink]="['/order-items', item.productId]" routerLinkActive="active">
-            Order
-        </button></td>
-      </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table> -->
-  
+    <tr mat-header-row *matHeaderRowDef="Columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: Columns"></tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[2, 4, 6]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>
 <router-outlet></router-outlet>
-  
-  
-  
+
+ 
+

@@ -1,40 +1,41 @@
-th{
-    border: 1px solid black;
-    padding : 5px;
-   
-  }
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
+::ng-deep .mat-sort-header-arrow {
+  color: rgb(17, 16, 17);
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+th.mat-header-cell {
+  text-align: center;
+}
+th.mat-header-cell {
+  justify-content: center;
+}
+/* td,
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+} */
 
-  tr:nth-child(even) {background-color: #f2f2f2;}
-  tr:nth-child(odd) {background-color: gray;}
-  .containerdiv{
-    /* padding: 15px;
-    background-color: gray;
-    border-radius: 5px;
-      margin:auto 40px;
-      display: flex;
-      justify-content: center; */
-  /* display: flex;
-  flex-direction: column; */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tr:nth-child(odd) {
+  background-color: gray;
+}
+.containerdiv {
   justify-content: center;
   padding: 10px;
   background-color: gray;
   /* color: white; */
   border-radius: 5px;
   /* width: 100%; */
-
 }
-a{
+td.mat-cell {
+  padding: auto;
+}
+a {
   color: white;
 }
-
