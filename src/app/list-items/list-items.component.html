@@ -1,4 +1,4 @@
-<div class="container">
+<div class="containerdiv">
   <input
     matInput
     (input)="searchProduct($any($event.target).value)"
@@ -13,22 +13,28 @@
     class="mat-elevation-z8 table table-striped"
   >
     <ng-container matColumnDef="productName">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header><h4>Product Name</h4></th>
-      <td mat-cell *matCellDef="let item">{{ checkCondition(item) ? item.productName: "NA" }}</td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        <h4>Product Name</h4>
+      </th>
+      <td mat-cell *matCellDef="let item">
+        {{ checkCondition(item) ? item.productName : "NA" }}
+      </td>
     </ng-container>
     <ng-container matColumnDef="availableQuantity">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>
         <h4>Available Quantity</h4>
       </th>
       <td mat-cell *matCellDef="let item">
-        {{  checkCondition(item) ? item.availableQuantity: "NA" }}
+        {{ checkCondition(item) ? item.availableQuantity : "NA" }}
       </td>
     </ng-container>
     <ng-container matColumnDef="unitPrice">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>
-       <h4> Price per Quantity</h4>
+        <h4>Price per Quantity</h4>
       </th>
-      <td mat-cell *matCellDef="let item">{{ checkCondition(item) ? item.unitPrice: "NA" }}</td>
+      <td mat-cell *matCellDef="let item">
+        {{ checkCondition(item) ? item.unitPrice : "NA" }}
+      </td>
     </ng-container>
     <ng-container matColumnDef="feature">
       <th mat-header-cell *matHeaderCellDef><h4>Features</h4></th>
@@ -43,7 +49,7 @@
     <tr mat-row *matRowDef="let row; columns: Columns"></tr>
   </table>
   <mat-paginator
-    [pageSizeOptions]="[4, 6, 8]"
+    [pageSizeOptions]="[2, 4, 6]"
     showFirstLastButtons
   ></mat-paginator>
 </div>
@@ -84,5 +90,3 @@
           </ng-container>
     </table> 
   </div> -->
-
-

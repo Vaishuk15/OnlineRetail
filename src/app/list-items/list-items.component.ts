@@ -13,9 +13,9 @@ import { input } from '../data';
 })
 export class ListItemsComponent implements OnInit, AfterViewInit {
   productList;
-  productName: any;
-  productId: any;
-  availableQuantity: any;
+  productName: string;
+  productId: string;
+  availableQuantity: number;
   data: any;
   listItems: any;
   Columns: string[] = [
@@ -25,17 +25,13 @@ export class ListItemsComponent implements OnInit, AfterViewInit {
     'feature',
   ];
 
-  // get filteredproductList(): any[] {
-  //   return this.productList.filter((item) => this.checkCondition(item));
-  // }
-
   constructor(private proService: AppServiceService) {}
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit(): void {
     this.ngAfterViewInit();
-   // this.productList.sortingDataAccessor = (data, sortHeaderId) => data[sortHeaderId].toLocaleLowerCase();
+    // this.productList.sortingDataAccessor = (data, sortHeaderId) => data[sortHeaderId].toLocaleLowerCase();
   }
 
   ngAfterViewInit() {
@@ -46,7 +42,6 @@ export class ListItemsComponent implements OnInit, AfterViewInit {
       this.productList.paginator = this.paginator;
       this.productList.filterPredicate = (data: any, filter: string) =>
         data.productName.indexOf(filter) != -1;
-      // console.log(this.productList);
     });
   }
 
@@ -75,8 +70,8 @@ export class ListItemsComponent implements OnInit, AfterViewInit {
     );
   }
   searchProduct(filterValue) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
     this.productList.filter = filterValue;
   }
 }

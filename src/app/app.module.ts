@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
-import { AppRoutingModule} from './app-routing.module';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppServiceService } from './app-service.service';
 import { ListItemsComponent } from './list-items/list-items.component';
@@ -14,8 +14,7 @@ import { CartItemsComponent } from './cart-items/cart-items.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-import { MatPaginatorModule} from '@angular/material/paginator';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,7 @@ import { MatPaginatorModule} from '@angular/material/paginator';
     AddItemsComponent,
     OrderItemsComponent,
     UpdateItemsComponent,
-    CartItemsComponent
+    CartItemsComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,9 +35,8 @@ import { MatPaginatorModule} from '@angular/material/paginator';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    
   ],
-  providers: [AppServiceService,OrderServiceService],
-  bootstrap: [AppComponent]
+  providers: [AppServiceService, OrderServiceService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,5 +1,3 @@
-
-
 ::ng-deep .mat-sort-header-arrow {
   color: rgb(17, 16, 17);
 }
@@ -8,10 +6,10 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-th.mat-header-cell{
+th.mat-header-cell {
   text-align: center;
 }
-th.mat-header-cell{
+th.mat-header-cell {
   justify-content: center;
 }
 /* td,
@@ -28,14 +26,6 @@ tr:nth-child(odd) {
   background-color: gray;
 }
 .containerdiv {
-  /* padding: 15px;
-    background-color: gray;
-    border-radius: 5px;
-      margin:auto 40px;
-      display: flex;
-      justify-content: center; */
-  /* display: flex;
-  flex-direction: column; */
   justify-content: center;
   padding: 10px;
   background-color: gray;
@@ -43,7 +33,7 @@ tr:nth-child(odd) {
   border-radius: 5px;
   /* width: 100%; */
 }
-td.mat-cell{
+td.mat-cell {
   padding: auto;
 }
 a {

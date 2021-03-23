@@ -8,9 +8,9 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add-items.component.css'],
 })
 export class AddItemsComponent implements OnInit {
-  availableQuantity: any;
-  productName: any;
-  unitPrice: any;
+  availableQuantity: number;
+  productName: string;
+  unitPrice: number;
 
   constructor(private proService: AppServiceService) {}
   ngOnInit(): void {}
@@ -21,11 +21,9 @@ export class AddItemsComponent implements OnInit {
       availableQuantity: this.availableQuantity,
       unitPrice: this.unitPrice,
     };
-    // console.log(addList)
-
     this.proService.postData(addList).subscribe(
       (data: any) => {
-        //console.log(data)
+
         Swal.fire('Product Added!', 'Success');
       },
       (error: { message: any }) => {
