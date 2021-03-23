@@ -55,38 +55,5 @@
 </div>
 <router-outlet></router-outlet>
 
-<!-- <div class="table containerdiv">
-      <table class="table table-striped">
-        <thead>
-            <tr>
-                <th><h4>Product Name</h4></th>
-                <th><h4>Available Quantity</h4></th>
-                <th><h4>Price per Quantity</h4></th>
-                <th><h4>Order</h4></th>
-                <th><h4>Delete</h4></th>
-                <th><h4>Update</h4></th>
-            </tr>
-        </thead>
+ 
 
-        <ng-container  *ngFor="let item of filteredproductList"><tr>
-           
-                <td>{{ item.productName }}</td>
-                <td>{{ item.availableQuantity }}</td>
-                <td>{{ item.unitPrice }}</td>
-                <td>
-                   
-                     <button [routerLink]="['/order-items', item.productId]" routerLinkActive="active">
-                        Order
-                    </button>
-                </td> 
-
-                <td><button (click)="deleteItem(item.productId)">Delete</button></td>
-                <td>
-                    <button  [routerLink]="['/update-items', item.productId]" routerLinkActive="active">
-                        Update
-                    </button>
-                </td> 
-         </tr>
-          </ng-container>
-    </table> 
-  </div> -->
