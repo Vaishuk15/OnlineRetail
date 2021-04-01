@@ -5,6 +5,12 @@
 .button:focus {
   outline: none;
 }
+
+.quantity {
+  font-size: medium;
+  height: 36px;
+  width: 250px;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -13,9 +19,4 @@
   /* color: white; */
   border-radius: 5px;
   /* width: 100%; */
-}
-.quantity {
-  font-size: medium;
-  height: 36px;
-  width: 250px;
 }
